@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ContactModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Street#" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="100" />
+    <Property Name="StreetName" Type="nvarchar" MaxLength="100" />
+    <Property Name="StreetType" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Zip" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Name">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Mi" Type="nvarchar" MaxLength="20" />
+    <Property Name="Suffix" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubjectAddress_lnk">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="SubjectId" Type="int" Nullable="false" />
+    <Property Name="AddressId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_SubjectAddress_lnk_Address">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="SubjectAddress_lnk" Type="Self.SubjectAddress_lnk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressId" />
+      </Principal>
+      <Dependent Role="SubjectAddress_lnk">
+        <PropertyRef Name="AddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubjectAddress_lnk_Name">
+    <End Role="Name" Type="Self.Name" Multiplicity="1" />
+    <End Role="SubjectAddress_lnk" Type="Self.SubjectAddress_lnk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Name">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="SubjectAddress_lnk">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetAllContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SaveContact" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Firstname" Type="nvarchar" Mode="In" />
+    <Parameter Name="Lastname" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mi" Type="nvarchar" Mode="In" />
+    <Parameter Name="Suffix" Type="nvarchar" Mode="In" />
+    <Parameter Name="Street" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direction" Type="nvarchar" Mode="In" />
+    <Parameter Name="StreetName" Type="nvarchar" Mode="In" />
+    <Parameter Name="StreetType" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="State" Type="nvarchar" Mode="In" />
+    <Parameter Name="Zip" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="ContactModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Name" EntityType="Self.Name" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubjectAddress_lnk" EntityType="Self.SubjectAddress_lnk" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SubjectAddress_lnk_Address" Association="Self.FK_SubjectAddress_lnk_Address">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="SubjectAddress_lnk" EntitySet="SubjectAddress_lnk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubjectAddress_lnk_Name" Association="Self.FK_SubjectAddress_lnk_Name">
+      <End Role="Name" EntitySet="Name" />
+      <End Role="SubjectAddress_lnk" EntitySet="SubjectAddress_lnk" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

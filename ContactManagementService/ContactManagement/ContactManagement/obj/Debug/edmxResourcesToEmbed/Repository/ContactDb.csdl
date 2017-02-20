@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ContactModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressId" />
+    </Key>
+    <Property Name="AddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Street_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StreetName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="StreetType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Zip" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Names" Relationship="Self.SubjectAddress_lnk" FromRole="Address" ToRole="Name" />
+  </EntityType>
+  <EntityType Name="Name">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Suffix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Addresses" Relationship="Self.SubjectAddress_lnk" FromRole="Name" ToRole="Address" />
+  </EntityType>
+  <Association Name="SubjectAddress_lnk">
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <End Role="Name" Type="Self.Name" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ContactEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="Names" EntityType="Self.Name" />
+    <AssociationSet Name="SubjectAddress_lnk" Association="Self.SubjectAddress_lnk">
+      <End Role="Address" EntitySet="Addresses" />
+      <End Role="Name" EntitySet="Names" />
+    </AssociationSet>
+    <FunctionImport Name="GetAllContact" ReturnType="Collection(ContactModel.GetAllContact_Result)" />
+    <FunctionImport Name="SaveContact">
+      <Parameter Name="Firstname" Mode="In" Type="String" />
+      <Parameter Name="Lastname" Mode="In" Type="String" />
+      <Parameter Name="Mi" Mode="In" Type="String" />
+      <Parameter Name="Suffix" Mode="In" Type="String" />
+      <Parameter Name="Street" Mode="In" Type="String" />
+      <Parameter Name="Direction" Mode="In" Type="String" />
+      <Parameter Name="StreetName" Mode="In" Type="String" />
+      <Parameter Name="StreetType" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Zip" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetAllContact_Result">
+    <Property Type="String" Name="FirstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="LastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Mi" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Suffix" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SubjectId" Nullable="false" />
+    <Property Type="Int32" Name="AddressId" Nullable="false" />
+    <Property Type="String" Name="Street_" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Direction" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="StreetName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="StreetType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Zip" Nullable="false" />
+  </ComplexType>
+</Schema>

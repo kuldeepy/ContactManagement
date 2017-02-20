@@ -1,0 +1,65 @@
+2017-02-14 11:54:09.4730 ContactManagement.Logging.Log System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19 System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19
+2017-02-14 11:55:02.5251 ContactManagement.Logging.Log System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19 System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19
+2017-02-14 12:06:09.0705 ContactManagement.Logging.Log System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19 System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19
+2017-02-14 12:07:09.1584 ContactManagement.Logging.Log System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.SaveContact(String firstname, String lastname, String mi, String suffix, String street, String direction, String streetName, String streetType, String city, String state, Nullable`1 zip) in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 84
+   at ContactManagement.Repository.ContactRepository.SaveContact(Contacts contact) in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 56 System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.SaveContact(String firstname, String lastname, String mi, String suffix, String street, String direction, String streetName, String streetType, String city, String state, Nullable`1 zip) in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 84
+   at ContactManagement.Repository.ContactRepository.SaveContact(Contacts contact) in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 56
+2017-02-14 12:07:09.1834 ContactManagement.Logging.Log System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19 System.InvalidOperationException: No connection string named 'ContactEntities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.ForceOSpaceLoadingForKnownEntityTypes()
+   at System.Data.Entity.DbContext.System.Data.Entity.Infrastructure.IObjectContextAdapter.get_ObjectContext()
+   at ContactManagement.Repository.ContactEntities.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactDb.Context.cs:line 35
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 19

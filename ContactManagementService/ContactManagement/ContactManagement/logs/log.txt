@@ -1,0 +1,3 @@
+2017-02-14 11:58:52.9491 ContactManagement.Logging.Log System.Exception: test
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 42 System.Exception: test
+   at ContactManagement.Repository.ContactRepository.GetAllContact() in c:\users\kuldeep.yadav\documents\visual studio 2015\Projects\ContactManagement\ContactManagement\Repository\ContactRepository.cs:line 42

@@ -1,0 +1,29 @@
+<div class="container" ng-controller="MainCtrl">
+  <h2>Contact List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Mi</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Suffix</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="c in contacts">
+       <td>{{c.Mi}}</td>
+       <td>{{c.FirstName}}</td>
+       <td>{{c.LastName}}</td>
+       <td>{{c.Suffix}}</td>
+       <td>{{c.Street +' ' +c.Direction +' ' + c.StreetName +' ' + c.StreetType}}</td>
+       <td>{{c.City}}</td>
+       <td>{{c.State}}</td>
+       <td>{{c.Zip}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+<div class="container" ng-controller="NewCtrl">
+	<h2>New Contact</h2>
+	<div>
+	  <form novalidate name="newContactForm">
+	     Mi:<br>
+	    <input type="text" ng-model="contact.Mi"><br>
+	    First Name:<br>
+	    <input type="text" ng-model="contact.FirstName" required><br>
+	    Last Name:<br>
+	    <input type="text" ng-model="contact.LastName" required><br>
+	    Suffix:<br>
+	    <input type="text" ng-model="contact.Suffix" placeholder="Suffix"><br>
+	    Address:<br>
+	    <textarea  rows="4" cols="30" required placeholder="7330 College Drive" ng-model="address" 
+	    ng-change="extractAddress()"></textarea><br>
+	    City:<br>
+	    <input type="text" ng-model="contact.City" required><br>
+	    State:<br>
+	    <input type="text" ng-model="contact.State" required><br>
+	    Zip Code:<br>
+	    <input type="number" ng-model="contact.Zip" required><br>
+	    <br><br>
+	    <button ng-click="Save()">Save</button>
+	  </form>
+	
+	</div>
+</div>
